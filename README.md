@@ -1,1 +1,1 @@
-# 3tier-sample-app
+# 3tier-sample-todo-app
