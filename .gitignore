@@ -1,0 +1,47 @@
+# Node dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Build output
+build/
+dist/
+.DS_Store
+
+# Environment variables (DO NOT COMMIT SECRETS)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Editor & OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+Thumbs.db
+
+# Docker files
+docker-compose.override.yml
+docker-compose.yml
+.dockerignore
+Dockerfile
+.Dockerfile
+*.tar
+
+# Kubernetes Manifests (optional: if you store in a separate repo)
+k8s/
+kubectl-config
+*.kubeconfig
+
+# Logs & temp files
+*.log
+logs/
+*.pid
+*.seed
+*.csv
+tmp/
+
