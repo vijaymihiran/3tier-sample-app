@@ -27,3 +27,22 @@ kubectl apply -f k8s-files/frontend/
 kubectl apply -f k8s-files/backend/
 kubectl apply -f k8s-files/ingress.yaml
 ```
+
+Database creation and steps for mysql
+
+```shell
+mysql -h <RDS_ENDPOINT> -u <DB_USER> -p
+```
+
+```shell
+CREATE DATABASE todo_db;
+USE todo_db;
+CREATE TABLE tasks (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    completed BOOLEAN DEFAULT FALSE
+);
+SHOW TABLES;
+```
+
