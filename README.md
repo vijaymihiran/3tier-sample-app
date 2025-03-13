@@ -7,6 +7,7 @@ $ kubectl create secret generic mysql-sec --from-literal username=admin --from-l
 ```
 
 To install aws loadbalancer controller
+Please install eksctl and helm for the below commands 
 
 ```shell
 eksctl utils associate-iam-oidc-provider --region=us-east-2 --cluster=sre-project-one-eks --approve
