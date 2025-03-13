@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todo-backend
+  template:
+    metadata:
+      labels:
+        app: todo-backend
+    spec:
+      containers:
+        - name: todo-backend
+          image: vijaymihiran/react-backend:latest
+          env:
+          - name: DB_HOST
+            valueFrom:
+              secretKeyRef:
+                name: mysql-sec
+                key: host
+          - name: DB_NAME
+            valueFrom:
+              secretKeyRef:
+                name: mysql-sec
+                key: dbname
+          - name: DB_PORT
+            valueFrom:
+              secretKeyRef:
+                name: mysql-sec
+                key: port
+          - name: DB_USER
+            valueFrom:
+              secretKeyRef:
+                name: mysql-sec
+                key: username
+          - name: DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: mysql-sec
+                key: password
+          ports:
+            - containerPort: 5000  # Adjust the port if necessary (e.g., 5000 for Express)
